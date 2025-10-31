@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -41,7 +43,13 @@ fun FormulirPendaftaran(modifier: Modifier = Modifier){
                 .background(Color(0xFF7B1FA2))
                 .padding(vertical = 16.dp),
             contentAlignment = Alignment.CenterStart
-        ) {}
+        ) {
+            Text(
+                text = "Formulir Pendaftaran",
+                color = Color.White,
+                style = MaterialTheme.typography.titleLarge
+            )
+        }
 
     }
 
