@@ -12,6 +12,7 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.Button
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
@@ -128,7 +129,15 @@ fun FormulirPendaftaran(modifier: Modifier = Modifier){
                 }
             }
         }
-
+        HorizontalDivider(
+            modifier = Modifier
+                .padding(
+                    bottom = dimensionResource(R.dimen.padding_medium),
+                    top = dimensionResource(R.dimen.padding_small)
+                )
+                .fillMaxWidth(),
+            thickness = dimensionResource(R.dimen.divider_tipis),
+            color = Color.Gray
+        )
     }
-
 }
