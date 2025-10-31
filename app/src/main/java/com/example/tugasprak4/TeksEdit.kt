@@ -4,13 +4,16 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -74,6 +77,22 @@ fun FormulirPendaftaran(modifier: Modifier = Modifier){
                         .padding(vertical = 8.dp),
                     label = { Text("Isian nama lengkap") }
                 )
+                Text("Jenis Kelamin", style = MaterialTheme.typography.labelLarge)
+                genderList.forEach { item ->
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier
+                            .selectable(
+                                selected = jenisKelamin == item,
+                                onClick = { jenisKelamin = item}
+                            )
+                            .padding(vertical = 2.dp)
+                    ) {
+                        RadioButton(selected = jenisKelamin == item, onClick = { jenisKelamin = item })
+                        Text(item)
+                    }
+                }
+
             }
         }
 
