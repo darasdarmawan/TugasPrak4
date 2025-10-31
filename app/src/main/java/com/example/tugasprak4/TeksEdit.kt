@@ -7,7 +7,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.Button
 import androidx.compose.material3.CardDefaults
@@ -27,6 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.unit.dp
+import com.example.tugasprak4.R
 
 @Composable
 fun FormulirPendaftaran(modifier: Modifier = Modifier){
@@ -139,5 +142,24 @@ fun FormulirPendaftaran(modifier: Modifier = Modifier){
             thickness = dimensionResource(R.dimen.divider_tipis),
             color = Color.Gray
         )
+        if (isSubmitted) {
+            ElevatedCard(
+                elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
+                colors = CardDefaults.cardColors(containerColor = Color(0xFF7B1FA2)),
+                modifier = Modifier
+                    .height(120.dp)
+                    .width(300.dp)
+            ) {
+                Column(
+                    modifier = Modifier.padding(12.dp),
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    Text("Nama" +nama, color = Color.White)
+                    Text("Jenis Kelamin" +jenisKelamin, color = Color.White)
+                    Text("Status" +status, color = Color.White)
+                    Text("Alamat" +alamat, color = Color.White)
+                }
+            }
+        }
     }
 }
