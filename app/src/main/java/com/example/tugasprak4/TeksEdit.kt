@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.Button
@@ -53,7 +54,8 @@ fun FormulirPendaftaran(modifier: Modifier = Modifier){
             modifier = Modifier
                 .fillMaxWidth()
                 .background(Color(0xFF7B1FA2))
-                .padding(vertical = 16.dp),
+                .safeDrawingPadding()
+                .padding(vertical = 16.dp, horizontal = 20.dp),
             contentAlignment = Alignment.CenterStart
         ) {
             Text(
@@ -154,10 +156,10 @@ fun FormulirPendaftaran(modifier: Modifier = Modifier){
                     modifier = Modifier.padding(12.dp),
                     verticalArrangement = Arrangement.Center
                 ) {
-                    Text("Nama" +nama, color = Color.White)
-                    Text("Jenis Kelamin" +jenisKelamin, color = Color.White)
-                    Text("Status" +status, color = Color.White)
-                    Text("Alamat" +alamat, color = Color.White)
+                    Text("Nama:" + nama, color = Color.White)
+                    Text("Jenis Kelamin:" + jenisKelamin, color = Color.White)
+                    Text("Status:" + status, color = Color.White)
+                    Text("Alamat:" + alamat, color = Color.White)
                 }
             }
         }
